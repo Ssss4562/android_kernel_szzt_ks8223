@@ -2443,9 +2443,10 @@ static int i2c_msm_qup_rsrcs_init(struct platform_device *pdev,
 	bam->mem = platform_get_resource_byname(pdev, IORESOURCE_MEM,
 							"bam_phys_addr");
 	if (!bam->mem) {
-		i2c_msm_dbg(ctrl, MSM_PROF,
-				"Missing 'qup_phys_addr' resource entry");
-		return -ENODEV;
+		dev_warn(&pdev->dev,
+			"Missing 'bam_phys_addr' resource entry (dt uses dmas/dma-names binding) - disabling BAM/DMA, falling back to BLOCK mode\n");
+		ctrl->rsrcs.disable_dma = true;
+		return 0;
 	}
 
 	bam->irq = platform_get_irq_byname(pdev, "bam_irq");

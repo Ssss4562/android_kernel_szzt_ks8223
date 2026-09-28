@@ -312,7 +312,7 @@ static int gt1x_parse_dt(struct device *dev)
     
     np = dev->of_node;
 	gt1x_int_gpio = of_get_named_gpio(np, "goodix,irq-gpio", 0);
-	gt1x_rst_gpio = of_get_named_gpio(np, "goodix,reset-gpio", 0);
+	gt1x_rst_gpio = of_get_named_gpio(np, "goodix,rst-gpio", 0);
 
     if (!gpio_is_valid(gt1x_int_gpio) || !gpio_is_valid(gt1x_rst_gpio)) {
         GTP_ERROR("Invalid GPIO, irq-gpio:%d, rst-gpio:%d",
