@@ -681,7 +681,7 @@ int gt1x_find_tp_config(struct device *dev,
  */
 s32 gt1x_init_panel(void)
 {
-	u16 cfg_len = 0;
+	int cfg_len = 0;
 	s32 ret = 0;
 
 #ifdef CONFIG_GTP_DRIVER_SEND_CFG

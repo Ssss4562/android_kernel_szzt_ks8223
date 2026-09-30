@@ -2589,7 +2589,6 @@
 				qcom,mdss-dsi-reset-sequence = <0x01 0x14 0x00 0x14 0x01 0x14>;
 				qcom,mdss-dsi-pan-enable-dynamic-fps;
 				qcom,mdss-dsi-pan-fps-update = "dfps_immediate_porch_mode_vfp";
-				qcom,cont-splash-enabled;
 			};
 
 			qcom,mdss_dsi_ili9881c_720p_video {
@@ -4621,7 +4620,6 @@
 					qcom,force-s3-on-suspend;
 					qcom,force-s2-in-charging;
 					qcom,report-charger-eoc;
-					qcom,disable-bms;
 					qcom,resume-soc = <0x63>;
 					qcom,force-bms-active-on-charger;
 					qcom,battery-data = <0xb6>;
@@ -5161,6 +5159,7 @@
 
 			focaltech@38 {
 				compatible = "focaltech,5x06";
+				status = "disabled";
 				reg = <0x38>;
 				interrupt-parent = <0x98>;
 				interrupts = <0x0d 0x02>;
